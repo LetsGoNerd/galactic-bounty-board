@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter Registration | Galactic Bounty Board</title>
+    <!-- Rajdhani: squared-off lettering for the Guild terminal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+  </head>
+
+  <body class="registration-body">
+    <header class="site-header">
+      <a class="site-brand" href="index.html">BOUNTY REGISTRY</a>
+      <audio class="background-music" autoplay loop preload="auto" aria-label="Background music">
+        <source src="sounds/warehouse-ostinato.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+      </audio>
+    </header>
+
+    <main class="registration-page">
+      <section class="registration-card" aria-labelledby="registration-title">
+        <div class="guild-symbol" aria-hidden="true">
+          <img src="images/robot-vacuum.svg" alt="">
+        </div>
+        <h1 id="registration-title">Come looking for a bounty, have you?</h1>
+        <p class="intro">Name first. The Guild keeps its own records.</p>
+
+        <form id="hunterForm" novalidate>
+          <label for="hunterName">HUNTER NAME</label>
+          <input
+            id="hunterName"
+            type="text"
+            placeholder="What do they call you?"
+            autocomplete="nickname"
+            maxlength="24"
+          >
+          <p id="formMessage" class="form-message" aria-live="polite"></p>
+          <button class="primary-button" type="submit">
+            SEE THE CONTRACTS →
+          </button>
+        </form>
+
+      </section>
+    </main>
+  </body>
+</html>

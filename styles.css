@@ -1,0 +1,287 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #eeeafb;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #30223e, #0c0b18 70%);
+}
+
+h1, h2, h3, button, label, .site-brand, .bounty-name {
+  font-family: "Rajdhani", Arial, sans-serif;
+}
+
+h1 { color: #ffd3a6; font-size: 34px; }
+p { line-height: 1.5; }
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px 5%;
+  background: #100d1d;
+  border-bottom: 1px solid #58446c;
+}
+
+.site-brand {
+  color: #f3c88d;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+/* Built-in music player.*/
+.background-music {
+  width: 225px;
+  height: 35px;
+  color-scheme: dark;
+}
+
+.eyebrow { color: #86e5fb; font-size: 12px; letter-spacing: 2px; }
+
+.primary-button {
+  width: 100%;
+  padding: 15px;
+  color: #100c1f;
+  background: #c39469;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary-button:hover { background: #f0be8c; }
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid #7ee9ff; }
+
+.registration-body {
+  background: #1b1826;
+}
+
+.registration-page {
+  min-height: calc(100vh - 77px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.registration-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 30px;
+  background: #292638;
+  border: 1px solid #615a79;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.registration-card h1 {
+  margin: 15px 0;
+  color: #efbb88;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.guild-symbol img {
+  width: 55px;
+  height: 55px;
+}
+
+.intro, .welcome-panel p, .puck-hint { color: #c7c3df; }
+
+form { margin-top: 27px; }
+label { display: block; margin-bottom: 8px; color: #a5d9ef; font-size: 14px; font-weight: bold; }
+
+input {
+  width: 100%;
+  padding: 12px;
+  background: #161521;
+  border: 1px solid #7a7490;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+}
+
+input::placeholder { color: #aaa6c7; }
+.form-message { min-height: 22px; color: #ffd3a6; font-size: 13px; }
+.registration-card .primary-button { background: #c69d70; }
+.registration-card .primary-button:hover { background: #ddae7c; }
+
+/* Page 2: Bounty board */
+.board-page { max-width: 1250px; margin: auto; padding: 35px 24px; }
+.welcome-panel { margin-bottom: 28px; }
+
+.board-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.board-panel {
+  padding: 24px;
+  background: #1a182e;
+  border: 1px solid #59537f;
+  border-radius: 8px;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.panel-heading h2 { margin: 0; color: #8ae2f5; font-size: 22px; }
+.panel-heading span { color: #b2aed0; font-size: 11px; }
+
+.bounty-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+}
+
+.bounty-card {
+  padding: 0 0 12px;
+  background: #252540;
+  border: 1px solid #545c83;
+  border-radius: 5px;
+  color: #eeeafb;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.bounty-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  padding: 8px;
+  margin-bottom: 10px;
+  background: radial-gradient(circle, #d8d8f414, #10122455);
+  filter: drop-shadow(0 0 4px #68ccee55);
+}
+
+.bounty-name, .bounty-credits { display: block; margin: 0 10px 4px; font-size: 15px; }
+.bounty-credits { color: #edbd87; font-size: 13px; }
+
+.bounty-card:hover, .bounty-card.selected {
+  border-color: #8ceafa;
+  box-shadow: 0 0 15px #1c88ac70;
+}
+
+/* Hologram puck */
+.detail-panel { text-align: center; }
+
+.hologram-stage {
+  position: relative;
+  height: 255px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hologram-image {
+  position: relative;
+  width: 205px;
+  height: 242px;
+  object-fit: contain;
+  opacity: 0;
+  filter: grayscale(1) sepia(1) saturate(4) hue-rotate(145deg)
+          drop-shadow(0 0 9px #59dcff);
+}
+
+.projection-beam {
+  position: absolute;
+  bottom: 0;
+  width: 220px;
+  height: 210px;
+  background: linear-gradient(to top, #58cef957, transparent);
+  clip-path: polygon(42% 100%, 58% 100%, 100% 0%, 0% 0%);
+  opacity: 0;
+}
+
+.hologram-stage.active .hologram-image { opacity: 0.7; animation: holoFlicker 2.4s infinite; }
+.hologram-stage.active .projection-beam { opacity: 0.35; }
+
+@keyframes holoFlicker {
+  0%, 100% { opacity: 0.78; }
+  48% { opacity: 0.38; }
+  50% { opacity: 0.71; }
+}
+
+.bounty-puck {
+  display: block;
+  position: relative;
+  width: 145px;
+  height: 42px;
+  margin: -5px auto 8px;
+  background: #2a4251;
+  border: 3px solid #699db0;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #26708e;
+  cursor: pointer;
+}
+
+.bounty-puck:hover { box-shadow: 0 0 23px #6adfff; }
+
+.puck-light {
+  display: inline-block;
+  width: 25px;
+  height: 8px;
+  background: #72e5ff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #72e5ff;
+}
+
+.puck-hint { margin: 0 0 22px; font-size: 12px; }
+
+.contract-details { padding: 15px 0; border-top: 1px solid #545477; text-align: left; }
+.contract-details h3 { color: #f5c99b; }
+
+/* Short Guild notes for the selected bounty. */
+.contract-details .bounty-bio {
+  display: block;
+  margin: 0 0 18px;
+  color: #d4cfe5;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+.contract-details p {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 9px 0;
+  font-size: 13px;
+}
+
+.contract-details p span { color: #aab8d5; }
+.contract-details strong { text-align: right; }
+.contract-message { min-height: 24px; color: #94efcf; font-size: 12px; }
+.secondary-link { display: inline-block; margin-top: 25px; color: #9ae4ff; }
+
+/* Smaller screens: put the bounty file below the cards. */
+@media (max-width: 850px) {
+  .board-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 550px) {
+  .board-page { padding: 20px 12px; }
+  .board-panel { padding: 15px; }
+  .registration-card { padding: 22px; }
+  .bounty-grid { grid-template-columns: repeat(2, 1fr); }
+  h1 { font-size: 25px; }
+}
+
+@media (max-width: 470px) {
+  .site-header { flex-wrap: wrap; }
+  .background-music { width: 100%; }
+}

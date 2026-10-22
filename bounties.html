@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounty Board | Galactic Bounty Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="bounties.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="index.html">BOUNTY REGISTRY</a>
+      <audio class="background-music" autoplay loop preload="auto" aria-label="Background music">
+        <source src="sounds/warehouse-ostinato.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+      </audio>
+    </header>
+
+    <main class="board-page">
+      <section class="welcome-panel">
+        <p class="eyebrow">GUILD ROSTER</p>
+        <h1 id="welcomeMessage">Well, look who's here, hunter.</h1>
+        <p>There's work to be done. Pick your quarry.</p>
+      </section>
+
+      <div class="board-layout">
+        <!-- LEFT: Available bounties -->
+        <section class="board-panel" aria-labelledby="bountiesTitle">
+          <div class="panel-heading">
+            <h2 id="bountiesTitle">OPEN CONTRACTS</h2>
+            <span>04 POSTED</span>
+          </div>
+
+          <div class="bounty-grid">
+            <button class="bounty-card selected" type="button">
+              <img src="images/twilek.png" alt="Twi'lek bounty portrait">
+              <span class="bounty-name">TWI'LEAKY FINGERS</span>
+              <span class="bounty-credits">8,500 CR</span>
+            </button>
+
+            <button class="bounty-card" type="button">
+              <img src="images/stormtrooper.png" alt="Stormtrooper bounty portrait">
+              <span class="bounty-name">TK-404 NOT FOUND</span>
+              <span class="bounty-credits">1 CR</span>
+            </button>
+
+            <button class="bounty-card" type="button">
+              <img src="images/mandalorian.png" alt="Mandalorian bounty portrait">
+              <span class="bounty-name">DIN DJARIN'T</span>
+              <span class="bounty-credits">12,500 CR</span>
+            </button>
+
+            <button class="bounty-card" type="button">
+              <img src="images/ig-unit.png" alt="IG-style droid bounty portrait">
+              <span class="bounty-name">IG-0 IQ</span>
+              <span class="bounty-credits">3,000 CR</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- RIGHT: Selected hologram and contract info -->
+        <section class="board-panel detail-panel" aria-labelledby="selectedTitle">
+          <div class="panel-heading">
+            <h2 id="selectedTitle">BOUNTY FILE</h2>
+            <span class="live-indicator">● PUCK READY</span>
+          </div>
+
+          <div class="hologram-stage active" id="hologram">
+            <div class="projection-beam" aria-hidden="true"></div>
+            <img id="targetImage" class="hologram-image" src="images/twilek.png" alt="Hologram of Twi'Leaky Fingers">
+          </div>
+
+          <button id="bountyPuck" class="bounty-puck" type="button" aria-pressed="true" aria-label="Toggle hologram">
+            <span class="puck-light" aria-hidden="true"></span>
+          </button>
+          <p class="puck-hint">Tap the puck to show or hide the target.</p>
+
+          <div class="contract-details">
+            <h3 id="targetName">TWI'LEAKY FINGERS</h3>
+            <p id="targetBio" class="bounty-bio">Wanted for slicing into a Hutt's bank account. Accidentally leaked her own location while deleting the evidence. Still insists she's impossible to track.</p>
+            <p><span>LAST SEEN</span> <strong id="targetPlanet">Nar Shaddaa</strong></p>
+            <p><span>RISK</span> <strong id="targetDanger">Medium</strong></p>
+            <p><span>PAY</span> <strong id="targetReward">8,500 credits</strong></p>
+          </div>
+
+          <button id="acceptButton" class="primary-button" type="button">TAKE THE JOB</button>
+          <p id="contractMessage" class="contract-message" aria-live="polite"></p>
+        </section>
+      </div>
+
+      <a class="secondary-link" href="index.html">← Change hunter</a>
+    </main>
+  </body>
+</html>
