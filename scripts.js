@@ -1,5 +1,4 @@
 // Personal challenge: saving the hunter name with localStorage.
-
 const form = document.querySelector("#hunterForm");
 const nameInput = document.querySelector("#hunterName");
 const message = document.querySelector("#formMessage");
@@ -34,7 +33,7 @@ form.addEventListener("submit", function (event) {
 
 // Background music 
 const backgroundMusic = document.querySelector(".background-music");
-backgroundMusic.volume = 2.5;
+backgroundMusic.volume = .08;
 
 function startMusic() {
   backgroundMusic.play().then(function () {

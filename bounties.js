@@ -99,7 +99,7 @@ if (savedBounty !== null && bounties[Number(savedBounty)] !== undefined) {
 
 
 const backgroundMusic = document.querySelector(".background-music");
-backgroundMusic.volume = 2.5;
+backgroundMusic.volume = .08;
 
 function startMusic() {
   backgroundMusic.play().then(function () {
